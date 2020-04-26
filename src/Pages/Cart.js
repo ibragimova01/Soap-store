@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CartIndex from "../Components/cart/index";
 import {connect} from "react-redux";
 
- class Cart extends Component {
+class Cart extends Component {
 
   render() {
     const {shoppingCart} = this.props
@@ -15,7 +15,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = state => {
   return {
-    shoppingCart: state.shoppingCart.shoppingCart
+    shoppingCart: state.shoppingCart
   }
 }
 

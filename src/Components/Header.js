@@ -9,14 +9,15 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-do
 
 import Catalog from '../Pages/Catalog';
 import Cart from '../Pages/Cart';
+import { connect } from 'react-redux';
 
-export default class Header extends Component {
+ class Header extends Component {
   render() {
     return (
       <Router>
         <Navbar collapseOnSelect expand="md" bg="light" variant="light" >
           <Container>
-            <Navbar.Brand href="/">
+            <Navbar.Brand to="/">
               <img
                 src={logo}
                 height="60"
@@ -28,15 +29,15 @@ export default class Header extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="m-auto ">
-              <NavLink to ="/catalog">Каталог</NavLink>
-              <NavLink to ="/cart">Корзина</NavLink>
+              <NavLink className="mx-2 nav-title" to ="/catalog"> Каталог</NavLink>
+              <NavLink className="mx-2 position-relative" to ="/cart">Корзина<span className="badge cart-status badge-pill badge-danger">{this.props.shoppingCart.total}</span></NavLink>
             </Nav>
             </Navbar.Collapse>
           </Container>
           </Navbar>
-
           
             <Switch>
+             
               <Route exact path="/catalog" component={Catalog} />
               <Route exact path="/cart" component={Cart} />
             </Switch>
@@ -46,3 +47,11 @@ export default class Header extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    shoppingCart: state.shoppingCart
+  }
+}
+
+export default connect(mapStateToProps)(Header)

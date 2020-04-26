@@ -11,7 +11,6 @@ import {connect} from "react-redux";
       Кaталог
       </div>
         <ProductList products={products}/>
-        
       </div>
     )
   }

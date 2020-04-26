@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {addProduct} from "../../store/actions/cartActions";
 import {connect} from "react-redux";
 import CartProductRow from "./product-row";
+import { Link } from "react-router-dom";
 
  class CartIndex extends Component {
   render() {
@@ -49,11 +50,11 @@ return (
               </div>
               <div className="w-100"></div>
               <div className="col-12 col-sm-8 col-md-5 col-lg-4 p-0 mt-1">
-                  <button href="" className="btn btn-danger border-0 w-100 text-light">
+                  <Link to="#" className="btn btn-danger border-0 w-100 text-light">
                       <div className="bg-danger rounded text-center font-weight-bold h6 m-0 p-4">
                           Оформить заказ
                       </div>
-                  </button>
+                  </Link>
               </div>
           </div>
           </div>
@@ -66,7 +67,7 @@ return (
           
       
           <div className="row justify-content-center">
-              <p className="h3 text-muted"></p>
+              <p className="h3 text-muted">Корзина пуста!</p>
           </div>
     </div>
     )

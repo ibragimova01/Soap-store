@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import {addProduct, removeProduct} from "../../store/actions/cartActions";
+import {addProduct, removeProduct, deleteProduct} from "../../store/actions/cartActions";
 
 
 class CartProductRow extends Component {
@@ -10,6 +10,10 @@ class CartProductRow extends Component {
   remove(id) {
     this.props.removeProduct(id)
   }
+  deleteCartProduct(product) {
+    this.props.deleteProduct(product)
+  }
+
   render() {
     let width = {
       width: "100px"
@@ -34,9 +38,9 @@ class CartProductRow extends Component {
     
                   <div className="col-lg-2 col-md-3 col-2 my-3 my-md-0 order-3">
                       <div className="d-flex ml-auto ml-md-0 justify-content-between align-items-center" style={width}>
-                          <span className="pointer cart-btn rounded-circle shadow p-2 remove_book d-flex justify-content-center align-items-center"  onClick={() => {this.remove(product.id)}}>-</span>
+                          <span className="pointer cart-btn rounded-circle p-2 remove_book d-flex justify-content-center align-items-center"  onClick={() => {this.remove(product.id)}}>-</span>
                           <span className="mx-2">{ product.quantity }</span>
-                          <span className="pointer cart-btn rounded-circle shadow buy_book p-2 d-flex justify-content-center align-items-center" onClick={() => {this.shop(product)}}>+</span>
+                          <span className="pointer cart-btn rounded-circle buy_book p-2 d-flex justify-content-center align-items-center" onClick={() => {this.shop(product)}}>+</span>
                       </div>
                   </div>
     
@@ -44,7 +48,7 @@ class CartProductRow extends Component {
                       <p className="m-0 text-left font-weight-bold"><span className="d-inline-block d-md-none">Итого:&nbsp;</span>{ product.quantity * product.price } сом</p>
                   </div>
                   <div className="col-1 align-self-md-center align-self-start order-1 order-md-last">
-                      <span className="pointer cart-btn shadow rounded-circle d-flex justify-content-center align-items-center p-2 delete_book">&times;</span>
+                      <span className="pointer cart-btn rounded-circle d-flex justify-content-center align-items-center p-2 delete_book" onClick={ () => {this.deleteCartProduct(product)}}>&times;</span>
                   </div>
               </div>
     )
@@ -55,7 +59,8 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     addProduct: (product) => dispatch(addProduct(product)), 
-    removeProduct:(id) => dispatch(removeProduct(id))
+    removeProduct:(id) => dispatch(removeProduct(id)),
+    deleteProduct:(product) => dispatch(deleteProduct(product))
   }
 }
 

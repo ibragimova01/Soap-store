@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import {addProduct} from "../../store/actions/cartActions";
 import {connect} from "react-redux";
@@ -10,11 +9,13 @@ import {connect} from "react-redux";
   render() {
     return (
       <div className="card" key = {this.props.product.id}>
-        <img src={`./assets/images/${this.props.product.image}`} className="card-img-top" alt="..."/>
+        <div className="card-img__wrapper">
+            <img src={`./assets/images/${this.props.product.image}`} className="card-img card-img-top" alt="..."/>
+        </div>
         <div className="card-body">
     <h5 className="card-title">{this.props.product.title}</h5>
-          <p className="card-text">{this.props.product.price}</p>
-          <button onClick={() => {this.shop(this.props.product)}} href="#" className="btn btn-primary">В корзину</button>
+          <p className="card-text">{this.props.product.price} сом</p>
+          <button onClick={() => {this.shop(this.props.product)}} className="btn btn-primary">В корзину</button>
         </div>
       </div>
     )

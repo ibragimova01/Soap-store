@@ -9,3 +9,9 @@ export const removeProduct = id => {
     dispatch({ type: "REMOVE_PRODUCT", id })
   }
 }
+
+export const deleteProduct = product => {
+  return (dispatch, getState) => {
+    dispatch({ type: "DELETE_PRODUCT", product })
+  }
+}
