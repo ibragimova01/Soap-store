@@ -1,0 +1,20 @@
+.m-icons {
+  font-size: 30px;
+  color: rgba(113, 72, 114, 0.63);
+}
+.m-icons:hover {
+  color: rgba(68, 201, 224, 0.63);
+}
+.nav-title {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+}
+.mx-2:hover {
+  text-decoration: none;
+}
+.cart-status {
+  position: absolute;
+  top: -6.5px;
+  right: -15px;
+  text-decoration: none;
+}

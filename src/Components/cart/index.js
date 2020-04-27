@@ -36,15 +36,12 @@ return (
   <div key={product.id}><CartProductRow product={product} /></div>
 )
           })}
-              
-         
           <div className="row justify-content-end mt-5 py-5">
               <div className="col-12 col-sm-8 col-md-5 col-lg-4 d-flex p-3" style={background}>
                   <div className="col-6 m-0 h6 font-weight-bold">
                       Итого
                   </div>
                   <div className="col-6 m-0 h5 font-weight-bold">
-
                       {shoppingCart.totalSum } сом
                   </div>
               </div>

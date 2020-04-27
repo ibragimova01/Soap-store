@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {addProduct} from "../../store/actions/cartActions";
 import {connect} from "react-redux";
+import "./card.css";
 
  class ProductCard extends Component {
   shop(product) {
@@ -14,8 +15,8 @@ import {connect} from "react-redux";
         </div>
         <div className="card-body">
     <h5 className="card-title">{this.props.product.title}</h5>
-          <p className="card-text">{this.props.product.price} сом</p>
-          <button onClick={() => {this.shop(this.props.product)}} className="btn btn-primary">В корзину</button>
+          <p className="card-price">{this.props.product.price} сом</p>
+          <button onClick={() => {this.shop(this.props.product)}} className="btn-card btn-primary">В корзину</button>
         </div>
       </div>
     )

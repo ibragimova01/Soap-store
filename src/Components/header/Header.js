@@ -4,14 +4,14 @@ import {
   Nav,
   Container
 } from "react-bootstrap";
-import logo from "./la-bg.png";
+import logo from "../header/logo.png";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
-
-import Catalog from '../Pages/Catalog';
-import Cart from '../Pages/Cart';
+import Catalog from '../../Pages/Catalog';
+import Cart from '../../Pages/Cart';
 import { connect } from 'react-redux';
+import "../header/header.css";
 
- class Header extends Component {
+class Header extends Component {
   render() {
     return (
       <Router>
@@ -26,24 +26,19 @@ import { connect } from 'react-redux';
                 alt="Logo"
               />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="m-auto ">
               <NavLink className="mx-2 nav-title" to ="/catalog"> Каталог</NavLink>
-              <NavLink className="mx-2 position-relative" to ="/cart">Корзина<span className="badge cart-status badge-pill badge-danger">{this.props.shoppingCart.total}</span></NavLink>
+              <NavLink className="mx-2 position-relative" to ="/cart"><i className="fa fa-cart-plus m-icons"/><span className="badge cart-status badge-pill badge-danger">{this.props.shoppingCart.total}</span></NavLink>
             </Nav>
             </Navbar.Collapse>
           </Container>
           </Navbar>
-          
             <Switch>
-             
               <Route exact path="/catalog" component={Catalog} />
               <Route exact path="/cart" component={Cart} />
             </Switch>
           </Router>
-
-          
     );
   }
 }
