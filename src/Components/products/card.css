@@ -2,7 +2,8 @@
     font-family: 'Caveat', cursive;
     position: relative;
     overflow: hidden;
-    margin: 10px;
+    margin: 0 auto;
+    margin-bottom: 40px;
     min-width: 220px;
     max-width: 310px;
     width: 100%;
@@ -21,7 +22,7 @@
   top: 0;
   right: 0;
   color: #ffffff;
-  background-color:  #2472a4;
+  background-color:  #2473a486;
   padding: 0 10px;
   line-height: 40px;
   font-weight: 800;
@@ -31,28 +32,22 @@
   right: 100%;
   border-style: solid;
   border-width: 0 12px 40px 0;
-  border-color: transparent  #2472a4 transparent;
+  border-color: transparent  #2473a486 transparent;
   content: '';
   top: 0;
 } 
-.btn-card {
-  text-decoration: none;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: #2472a4;
-  line-height: 40px;
-  padding: 0 10px;
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 0.7em;
-  text-transform: uppercase;
-}
 .card-img:hover
   {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    cursor: pointer;
   }
 .card-img__wrapper {
   overflow: hidden;
+}
+.btn-card {
+  background-color: rgba(7, 52, 255, 0.678);
+}
+.card-img__wrapper {
+  max-height: 250px;
 }
