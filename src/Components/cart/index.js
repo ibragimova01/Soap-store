@@ -3,6 +3,7 @@ import {addProduct} from "../../store/actions/cartActions";
 import {connect} from "react-redux";
 import CartProductRow from "./product-row";
 import { Link } from "react-router-dom";
+import "./cart.css";
 
  class CartIndex extends Component {
   render() {

@@ -14,8 +14,8 @@ import "../header/header.css";
 class Header extends Component {
   render() {
     return (
-      <Router>
-        <Navbar collapseOnSelect expand="md" bg="light" variant="light" >
+      <div>
+        <Navbar className="navbar" collapseOnSelect expand="md" bg="light" variant="light" >
           <Container>
             <Navbar.Brand to="/">
               <img
@@ -38,7 +38,7 @@ class Header extends Component {
               <Route exact path="/catalog" component={Catalog} />
               <Route exact path="/cart" component={Cart} />
             </Switch>
-          </Router>
+          </div>
     );
   }
 }
