@@ -1,6 +1,7 @@
 import  React, { Component } from "react";
 import {connect} from "react-redux";
-import BackBtn from "../Components/back-btn"
+import BackBtn from "../Components/back-btn";
+import "../index.css";
 
 
 class Details extends Component {
@@ -24,13 +25,22 @@ class Details extends Component {
   render() {
     
     return (
-      <div className="detailsContainer">
-        <h4>{this.state.product.title}</h4>
-        <span>{this.state.product.price} сом</span>
-        <div>{this.state.product.info}</div>
-        <div>{this.state.product.description}</div>
-        <img src={`../assets/images/${this.state.product.image}`} className="details-img" alt="..."/>
+      <div className="details-inner">
+        <div className="details-container">
+        <div className="img-box">
+          <img src={`../assets/images/${this.state.product.image}`} className="details-img" alt="..."/>
+        </div>
+        <div className="details">
+      <div className="content">
+        <h2 className='title'>{this.state.product.title}</h2>
+        <p>
+        {this.state.product.description}
+        </p>
+        <h3>{this.state.product.price} сом</h3>
         <BackBtn/>
+      </div>
+    </div>
+    </div>
       </div>
     )
   }

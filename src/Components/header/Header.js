@@ -5,7 +5,7 @@ import {
   Container
 } from "react-bootstrap";
 import logo from "../header/logo.png";
-import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import Catalog from '../../Pages/Catalog';
 import Cart from '../../Pages/Cart';
 import { connect } from 'react-redux';
