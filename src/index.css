@@ -52,10 +52,17 @@ code {
   padding: 40px;
 }
 .title{
-  font-family: "Caveat";
+  font-family: 'Caveat', cursive;
   font-size: 2.5rem;
   line-height: 0.8em;
   color: #444;
+}
+.description {
+  font-size: 16px;
+  padding-top: 10px;
+}
+.composition {
+  font-size: 14px;
 }
 @media (max-width: 1080px){
   .content .content h3{
@@ -74,7 +81,7 @@ code {
     height: 280px;
     overflow: hidden;
     text-align: center;
-    align-items:cente;
+    align-items:center;
   }
   .details-img{
     left: initial;

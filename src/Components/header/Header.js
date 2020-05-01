@@ -17,6 +17,7 @@ class Header extends Component {
       <div>
         <Navbar className="navbar" collapseOnSelect expand="md" bg="light" variant="light" >
           <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand to="/">
               <img
                 src={logo}

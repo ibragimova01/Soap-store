@@ -33,10 +33,13 @@ class Details extends Component {
         <div className="details">
       <div className="content">
         <h2 className='title'>{this.state.product.title}</h2>
-        <p>
+        <p className="description">
         {this.state.product.description}
         </p>
-        <h3>{this.state.product.price} сом</h3>
+        <h6>Состав:</h6>
+        <p className="composition">{this.state.product.composition}</p>
+        <p>Вес: {this.state.product.weight}гр</p>
+        <h3 className="card-price">{this.state.product.price} сом</h3>
         <BackBtn/>
       </div>
     </div>

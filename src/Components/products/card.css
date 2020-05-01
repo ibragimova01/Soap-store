@@ -1,15 +1,14 @@
 .card {
-    font-family: 'Caveat', cursive;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-bottom: 40px;
-    min-width: 220px;
-    max-width: 310px;
-    width: 100%;
-    color: #333;
-    text-align: left;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-family: 'Caveat', cursive;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  min-width: 220px;
+  max-width: 310px;
+  color: #333;
+  text-align: left;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   }
 .card * {
   -webkit-box-sizing: border-box;
@@ -43,6 +42,7 @@
     cursor: pointer;
   }
 .card-img__wrapper {
+  height: 218px;
   overflow: hidden;
 }
 .btn-card {
@@ -50,4 +50,9 @@
 }
 .card-img__wrapper {
   max-height: 250px;
+}
+@media (max-width: 767px){
+  .card-img__wrapper {
+    height: 300px;
+  }
 }
