@@ -8,6 +8,7 @@ import logo from "../header/logo.png";
 import { Switch, Route, NavLink } from "react-router-dom";
 import Catalog from '../../Pages/Catalog';
 import Cart from '../../Pages/Cart';
+import Order from '../../Pages/Order';
 import { connect } from 'react-redux';
 import "../header/header.css";
 
@@ -29,6 +30,7 @@ class Header extends Component {
             </Navbar.Brand>
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="m-auto ">
+              <NavLink className="mx-2 nav-title" to ="/order">Мыло на заказ</NavLink>
               <NavLink className="mx-2 nav-title" to ="/catalog"> Каталог</NavLink>
               <NavLink className="mx-2 position-relative" to ="/cart"><i className="fa fa-cart-plus m-icons"/><span className="badge cart-status badge-pill badge-danger">{this.props.shoppingCart.total}</span></NavLink>
             </Nav>
@@ -36,6 +38,7 @@ class Header extends Component {
           </Container>
           </Navbar>
             <Switch>
+              <Route exact path="/order" component={Order} />
               <Route exact path="/catalog" component={Catalog} />
               <Route exact path="/cart" component={Cart} />
             </Switch>

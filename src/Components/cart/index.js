@@ -5,7 +5,7 @@ import CartProductRow from "./product-row";
 import { Link } from "react-router-dom";
 import "./cart.css";
 
- class CartIndex extends Component {
+class CartIndex extends Component {
   render() {
     const {shoppingCart} = this.props
 
