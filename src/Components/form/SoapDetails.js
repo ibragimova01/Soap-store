@@ -14,7 +14,7 @@ class SoapDetails extends Component {
     const {handleChange, jobTitle, jobCompany} = this.props;
     return (
       <>
-        <h1>Введите данные</h1>
+        <h3>Введите данные</h3>
         <label>
           <input
             type="text"

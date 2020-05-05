@@ -6,14 +6,16 @@ class AllInfo extends Component {
     this.props.prevStep();
   }
   render() {
-    const { firstName, lastName, jobTitle, jobCompany } = this.props;
+    const { firstName, phone, jobTitle, jobCompany, color, comment} = this.props;
     return (
       <>
-        <h2>результат</h2>
-    first Name <b>{firstName}</b><br/>
-    last Name <b>{lastName}</b><br/>
+        <h3>результат</h3>
+    Цвет <b>{color}</b><br/>
     job <b>{jobTitle}</b><br/>
     Company <b>{jobCompany}</b><br/>
+    Имя <b>{firstName}</b><br/>
+    Телефон <b>{phone}</b><br/>
+    Комментарии <b>{comment}</b><br/>
     <button className="Back" onClick={this.back}>
       Back
     </button>

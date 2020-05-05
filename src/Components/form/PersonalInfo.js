@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
 
-export class PersonalInfo extends Component {
+class PersonalInfo extends Component {
   continue = e => {
     e.preventDefault()
     this.props.nextStep();
   }
+  back = e => {
+    e.preventDefault()
+    this.props.prevStep();
+  }
   render() {
-    const {handleChange, lastName, firstName} = this.props;
+    const {handleChange, firstName, phone, comment} = this.props;
     return (
       <>
-        <h1>Введите данные</h1>
+        <h3>Введите данные</h3>
         <label>
           <input
             type="text"
             name="firstName"
-            placeholder="First Name"
+            placeholder="Имя"
             value={firstName}
             onChange={handleChange('firstName')}
           />
@@ -22,12 +26,23 @@ export class PersonalInfo extends Component {
         <label>
           <input
             type="text"
-            name="lastName"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={handleChange('lastName')}
+            name="phone"
+            placeholder="Контактный телефон"
+            value={phone}
+            onChange={handleChange('phone')}
           />
         </label>
+        <label>
+          <textarea
+            name="comment"
+            placeholder="Коментарии"
+            value={comment}
+            onChange={handleChange('comment')}
+          />
+        </label>
+        <button className="Back" onClick={this.back}>
+          Back 
+        </button>
         <button className="Next" onClick={this.continue}>
           Next 
         </button>
