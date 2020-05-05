@@ -38,7 +38,7 @@ class PersonalInfo extends Component {
             placeholder="Коментарии"
             value={comment}
             onChange={handleChange('comment')}
-          />
+          ></textarea>
         </label>
         <button className="Back" onClick={this.back}>
           Back 

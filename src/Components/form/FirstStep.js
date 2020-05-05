@@ -7,12 +7,12 @@ class FirstStep extends Component {
     this.props.nextStep();
   }
   render() {
-    
+    const {handleChange} = this.props
     return (
       <div>
         <h3>Выберите цвет основы</h3>
-        <ColorPicker/>
-        <button className='Next' onClick={this.continue}>Дальше</button >
+        <ColorPicker handleChange = {this.handleChange}/>
+        <button className='Next' onClick={this.continue}>Next</button >
       </div>
     )
   }

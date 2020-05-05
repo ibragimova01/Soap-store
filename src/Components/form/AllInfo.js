@@ -19,7 +19,8 @@ class AllInfo extends Component {
     <button className="Back" onClick={this.back}>
       Back
     </button>
-      </>
+    <button>Отправить</button>
+    </>
     )
   }
 }

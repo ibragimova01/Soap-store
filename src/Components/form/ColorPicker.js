@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 import { SwatchesPicker } from 'react-color';
 
-function ColorPicker()  {
-  const [color, setColor] = useState('#ff0000')
+class ColorPicker extends Component  {
+  state = {
+    color: '#ff0000'
+  }
+  handleChangeComplete = (color, event) => {
+this.setState({color:color.hex})
+this.props.handleChange('color')
+  };
+  
+  render () {
     return (
       <>
         <SwatchesPicker
-        color={color}
-        onChangeComplete={ (color) => {setColor(color.hex)}}
+        color={this.state.color} 
+        onChangeComplete={()=> this.handleChangeComplete}
         />
       </>
       
     )
+   }
   }
 
 export default ColorPicker

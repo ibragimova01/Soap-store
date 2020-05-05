@@ -44,6 +44,7 @@ handleChange = input => e => {
       <FirstStep
       color={color}
       nextStep = {this.nextStep}
+      handleChange = {this.handleChange}
       />
       );
     if(step === 2)
