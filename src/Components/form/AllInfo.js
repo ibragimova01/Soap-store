@@ -1,6 +1,20 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
+import { addOrder } from '../../store/actions/orderActions'
 class AllInfo extends Component {
+
+  addOrder() {
+    const order={
+      color: this.props.color,
+      firstName: this.props.firstName,
+      phone: this.props.phone,
+      jobTitle: this.props.jobTitle,
+      jobCompany: this.props.jobCompany,
+      comment: this.props.comment
+    }
+    this.props.addOrder(order)
+  }
+
   back = e => {
     e.preventDefault()
     this.props.prevStep();
@@ -19,10 +33,15 @@ class AllInfo extends Component {
     <button className="Back" onClick={this.back}>
       Back
     </button>
-    <button>Отправить</button>
+    <button onClick={() => {this.addOrder()}}>Отправить</button>
     </>
     )
   }
 }
 
-export default AllInfo
+const mapDispatchToProps =(dispatch) => {
+  return {
+    addOrder: (order) => dispatch(addOrder(order))
+  }
+}
+export default connect(null, mapDispatchToProps)(AllInfo)

@@ -11,7 +11,7 @@ class FirstStep extends Component {
     return (
       <div>
         <h3>Выберите цвет основы</h3>
-        <ColorPicker handleChange = {this.handleChange}/>
+        <ColorPicker handleChange = {handleChange}/>
         <button className='Next' onClick={this.continue}>Next</button >
       </div>
     )

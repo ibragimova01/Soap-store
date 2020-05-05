@@ -37,6 +37,12 @@ prevStep = () => {
 handleChange = input => e => {
   this.setState({[input]: e.target.value});
 }
+setColor = (color) => {
+  this.setState({
+    color: color
+  })
+  console.log(this.state.color);
+}
   showStep = () => {
     const {step, firstName, phone, comment, jobTitle, jobCompany, color} = this.state;
     if(step === 1)
@@ -44,7 +50,7 @@ handleChange = input => e => {
       <FirstStep
       color={color}
       nextStep = {this.nextStep}
-      handleChange = {this.handleChange}
+      handleChange = {this.setColor}
       />
       );
     if(step === 2)
