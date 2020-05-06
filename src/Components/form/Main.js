@@ -17,7 +17,7 @@ class Main extends Component {
 
     //final step
     firstName: '',
-    lastName: '',
+    phone: '',
     comment: '',
   }
 

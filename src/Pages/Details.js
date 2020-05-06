@@ -1,7 +1,7 @@
 import  React, { Component } from "react";
 import {connect} from "react-redux";
 import BackBtn from "../Components/back-btn";
-import "../index.css";
+import "./details.css";
 
 
 class Details extends Component {

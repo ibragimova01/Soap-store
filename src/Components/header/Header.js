@@ -1,25 +1,17 @@
 import React, { Component } from "react";
-import {
-  Navbar,
-  Nav,
-  Container
-} from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../header/logo.png";
-import { Switch, Route, NavLink } from "react-router-dom";
-import Catalog from '../../Pages/Catalog';
-import Cart from '../../Pages/Cart';
-import Order from '../../Pages/Order';
+import { NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
 import "../header/header.css";
 
 class Header extends Component {
   render() {
     return (
-      <div>
         <Navbar className="navbar" collapseOnSelect expand="md" bg="light" variant="light" >
           <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Brand to="/">
+            <NavLink exact to="/">
               <img
                 src={logo}
                 height="60"
@@ -27,7 +19,7 @@ class Header extends Component {
                 className="d-inline-block align-top"
                 alt="Logo"
               />
-            </Navbar.Brand>
+            </NavLink>
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="m-auto ">
               <NavLink className="mx-2 nav-title" to ="/order">Мыло на заказ</NavLink>
@@ -37,12 +29,6 @@ class Header extends Component {
             </Navbar.Collapse>
           </Container>
           </Navbar>
-            <Switch>
-              <Route exact path="/order" component={Order} />
-              <Route exact path="/catalog" component={Catalog} />
-              <Route exact path="/cart" component={Cart} />
-            </Switch>
-          </div>
     );
   }
 }

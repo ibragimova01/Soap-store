@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ProductList from "../Components/products/list";
 import {connect} from "react-redux";
 
- class Catalog extends Component {
+class Catalog extends Component {
   render() {
     const { products } = this.props
     return (

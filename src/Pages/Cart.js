@@ -1,23 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import CartIndex from "../Components/cart/index";
-import {connect} from "react-redux";
+import {useSelector} from "react-redux";
 
-class Cart extends Component {
+function Cart() {
+  const shoppingCart = useSelector((state) => state.shoppingCart)
 
-  render() {
-    const {shoppingCart} = this.props
-    console.log(shoppingCart)
-    return (
-      <CartIndex shoppingCart={shoppingCart}/>
-    )
-  }
+  return <CartIndex shoppingCart={shoppingCart}/>
 }
 
-const mapStateToProps = state => {
-  return {
-    shoppingCart: state.shoppingCart
-  }
-}
-
-
-export default connect(mapStateToProps)(Cart)
+export default Cart

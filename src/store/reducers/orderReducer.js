@@ -10,9 +10,8 @@ const initState = {
 
     //final step
     firstName: '',
-    lastName: '',
-    comment: '',
-    phone: ''
+    phone: '',
+    comment: ''
 }
 
 const add = (order, state) => {
@@ -23,7 +22,6 @@ const add = (order, state) => {
      jobCompany: order.jobCompany,
 
      firstName: order.firstName,
-     lastName:  order.lastName,
      comment:  order.comment,
      phone:  order.phone,
   }

@@ -5,13 +5,13 @@ const initState = {
 }
 
 const add = (product, state) => {
-let findedProduct = state.items.find(e => e.id === product.id)
+let foundProduct = state.items.find(e => e.id === product.id)
 
-  if (findedProduct) {
+  if (foundProduct) {
     state = {
       ...state,
       total: state.total + 1,
-      totalSum: state.totalSum + findedProduct.price,
+      totalSum: state.totalSum + foundProduct.price,
       items: state.items.map((item) => {
         item = {...item};
         if (item.id === product.id) {
@@ -34,13 +34,13 @@ let findedProduct = state.items.find(e => e.id === product.id)
 }
 
 const remove = (id, state) => {
-let findedProduct = state.items.find(e => e.id === id)
+let foundProduct = state.items.find(e => e.id === id)
 
-if (findedProduct.quantity > 1) {
+if (foundProduct.quantity > 1) {
   state = {
       ...state,
       total: state.total - 1,
-      totalSum: state.totalSum - findedProduct.price,
+      totalSum: state.totalSum - foundProduct.price,
       items: state.items.map((item) => {
         item = {...item};
         if (item.id === id) {
@@ -53,7 +53,7 @@ if (findedProduct.quantity > 1) {
   state = {
       ...state,
       total: state.total - 1,
-      totalSum: state.totalSum - findedProduct.price,
+      totalSum: state.totalSum - foundProduct.price,
       items: state.items.filter((item) => {
         return item.id !== id
       })
@@ -63,13 +63,13 @@ return state
 }
 
 const deleteProduct = (product, state) => {
-  let findedProduct = state.items.find(e => e.id === product.id)
-  if  (findedProduct) {
+  let foundProduct = state.items.find(e => e.id === product.id)
+  if  (foundProduct) {
     
     state = {
       ...state, 
-      totalSum: state.totalSum - findedProduct.price * findedProduct.quantity, 
-      total: state.total - findedProduct.quantity,
+      totalSum: state.totalSum - foundProduct.price * foundProduct.quantity, 
+      total: state.total - foundProduct.quantity,
       items: state.items.filter(item => {
         return item.id !== product.id
       })

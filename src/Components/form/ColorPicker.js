@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { SwatchesPicker } from 'react-color';
 
 class ColorPicker extends Component  {
