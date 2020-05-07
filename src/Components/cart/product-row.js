@@ -20,7 +20,7 @@ class CartProductRow extends Component {
     }
 
     let image = {
-      width: "auto",
+      minWidth: "100px",
       height: "100px"
     }
 

@@ -3,6 +3,8 @@ import PersonalInfo from './PersonalInfo';
 import JobDetails from './SoapDetails';
 import AllInfo from './AllInfo';
 import FirstStep from './FirstStep';
+import ImageUploader from './ImageUploader';
+
 
 class Main extends Component {
   state = {
@@ -10,7 +12,7 @@ class Main extends Component {
 
     // step 1
     color: '',
-    
+    image: null,
     // step 2
     jobTitle: '',
     jobCompany: '',
@@ -43,6 +45,13 @@ setColor = (color) => {
   })
   console.log(this.state.color);
 }
+
+setImage = (image) => {
+  this.setState({
+    image: image
+  })
+  console.log(this.state.image);
+}
   showStep = () => {
     const {step, firstName, phone, comment, jobTitle, jobCompany, color} = this.state;
     if(step === 1)
@@ -55,12 +64,10 @@ setColor = (color) => {
       );
     if(step === 2)
     return (
-    <JobDetails
-      handleChange = {this.handleChange}
-      nextStep = {this.nextStep}
-      prevStep = {this.prevStep}
-      jobTitle = {jobTitle}
-      jobCompany = {jobCompany}
+    <ImageUploader
+    prevStep = {this.prevStep}
+    nextStep = {this.nextStep}
+    handleChang= {this.setImage}
     />
     );
     if(step === 3)

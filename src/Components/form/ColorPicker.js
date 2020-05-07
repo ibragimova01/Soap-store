@@ -24,14 +24,12 @@ class ColorPicker extends Component  {
       <div style={this.state.background}>
         <SwatchesPicker
         color={this.state.color} 
-        // onChange={this.handleChangeComplete}
         onChangeComplete={this.handleChangeComplete}
         />
       </div>
       
     )
-   }
-
+    }
   }
 
 export default ColorPicker
