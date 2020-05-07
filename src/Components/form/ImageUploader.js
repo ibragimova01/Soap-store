@@ -13,14 +13,13 @@ class ImageUploader extends Component {
     this.props.prevStep();
   }
   fileSelectHandler = event => {
-    this.setState((state) => { 
-      return {
+    this.setState({
         selectedFile: event.target.files[0]
-      }
-
     })
-    console.log(this.props, this.state)
-    this.props.handleChang(this.state.selectedFile)
+    setTimeout(() =>  {
+      console.log(this.state)
+      this.props.handleChange(this.state.selectedFile)
+    }, 100)
   }
 
   render() {

@@ -53,7 +53,7 @@ setImage = (image) => {
   console.log(this.state.image);
 }
   showStep = () => {
-    const {step, firstName, phone, comment, jobTitle, jobCompany, color} = this.state;
+    const {step, firstName, phone, comment, jobTitle, jobCompany, color, image} = this.state;
     if(step === 1)
     return (
       <FirstStep
@@ -67,7 +67,7 @@ setImage = (image) => {
     <ImageUploader
     prevStep = {this.prevStep}
     nextStep = {this.nextStep}
-    handleChang= {this.setImage}
+    handleChange = {this.setImage}
     />
     );
     if(step === 3)
@@ -101,6 +101,7 @@ setImage = (image) => {
       prevStep = {this.prevStep}
       nextStep = {this.nextStep}
       color = {color}
+      image = {image}
       />
       );
   }

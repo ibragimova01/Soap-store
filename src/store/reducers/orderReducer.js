@@ -11,7 +11,8 @@ const initState = {
     //final step
     firstName: '',
     phone: '',
-    comment: ''
+    comment: '',
+    image: null
 }
 
 const add = (order, state) => {
@@ -24,6 +25,7 @@ const add = (order, state) => {
      firstName: order.firstName,
      comment:  order.comment,
      phone:  order.phone,
+     image: order.image
   }
   console.log(state)
   return state

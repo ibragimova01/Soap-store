@@ -10,7 +10,8 @@ class AllInfo extends Component {
       phone: this.props.phone,
       jobTitle: this.props.jobTitle,
       jobCompany: this.props.jobCompany,
-      comment: this.props.comment
+      comment: this.props.comment,
+      image: this.props.image
     }
     this.props.addOrder(order)
   }
@@ -24,7 +25,7 @@ class AllInfo extends Component {
     return (
       <>
         <h3>результат</h3>
-    Цвет <b>{color}</b><br/>
+    Цвет <div style={{background: color, width: '30px', height: '30px', borderRadius: '50%'}}></div><br/>
     job <b>{jobTitle}</b><br/>
     Company <b>{jobCompany}</b><br/>
     Имя <b>{firstName}</b><br/>
