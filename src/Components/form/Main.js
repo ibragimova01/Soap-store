@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PersonalInfo from './PersonalInfo';
-import JobDetails from './SoapDetails';
 import AllInfo from './AllInfo';
 import FirstStep from './FirstStep';
 import ImageUploader from './ImageUploader';
+import Select from './Select';
 
 
 class Main extends Component {
@@ -14,8 +14,8 @@ class Main extends Component {
     color: '',
     image: null,
     // step 2
-    jobTitle: '',
-    jobCompany: '',
+    topic: '',
+
 
     //final step
     firstName: '',
@@ -52,8 +52,16 @@ setImage = (image) => {
   })
   console.log(this.state.image);
 }
+
+setTopic = (topic) => {
+  this.setState({
+    topic: topic
+  })
+  console.log(this.state.topic);
+}
+
   showStep = () => {
-    const {step, firstName, phone, comment, jobTitle, jobCompany, color, image} = this.state;
+    const {step, firstName, phone, comment, topic, color, image} = this.state;
     if(step === 1)
     return (
       <FirstStep
@@ -72,12 +80,11 @@ setImage = (image) => {
     );
     if(step === 3)
     return (
-      <JobDetails
-      handleChange = {this.handleChange}
+      <Select
+      handleChange = {this.setTopic}
       nextStep = {this.nextStep}
       prevStep = {this.prevStep}
-      jobTitle = {jobTitle}
-      jobCompany = {jobCompany}
+      
     />
       );
       if(step === 4)
@@ -96,8 +103,6 @@ setImage = (image) => {
       firstName = {firstName}
       phone = {phone}
       comment ={comment}
-      jobTitle = {jobTitle}
-      jobCompany = {jobCompany}
       prevStep = {this.prevStep}
       nextStep = {this.nextStep}
       color = {color}

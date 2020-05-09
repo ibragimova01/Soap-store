@@ -8,10 +8,9 @@ class AllInfo extends Component {
       color: this.props.color,
       firstName: this.props.firstName,
       phone: this.props.phone,
-      jobTitle: this.props.jobTitle,
-      jobCompany: this.props.jobCompany,
       comment: this.props.comment,
-      image: this.props.image
+      image: this.props.image,
+      topic: this.props.topic
     }
     this.props.addOrder(order)
   }
@@ -21,7 +20,7 @@ class AllInfo extends Component {
     this.props.prevStep();
   }
   render() {
-    const { firstName, phone, jobTitle, jobCompany, color, comment} = this.props;
+    const { firstName, phone, jobTitle, jobCompany, color, comment, topic} = this.props;
     return (
       <>
         <h3>результат</h3>
@@ -31,6 +30,7 @@ class AllInfo extends Component {
     Имя <b>{firstName}</b><br/>
     Телефон <b>{phone}</b><br/>
     Комментарии <b>{comment}</b><br/>
+    Масло <b>{topic}</b><br/>
     <button className="Back" onClick={this.back}>
       Back
     </button>

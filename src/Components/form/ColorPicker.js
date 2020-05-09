@@ -9,7 +9,9 @@ class ColorPicker extends Component  {
     }
   }
   componentDidMount(){
-    this.props.handleChange(this.state.color);
+    setTimeout(() =>  {
+      this.props.handleChange(this.state.color)
+    }, 100 )
     console.log(this.state, this.props)
   }
   handleChangeComplete = (color, event) => {
