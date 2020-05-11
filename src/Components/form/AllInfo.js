@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addOrder } from '../../store/actions/orderActions'
+
 class AllInfo extends Component {
 
   addOrder() {
@@ -10,7 +11,7 @@ class AllInfo extends Component {
       phone: this.props.phone,
       comment: this.props.comment,
       image: this.props.image,
-      topic: this.props.topic
+      oil: this.props.oil
     }
     this.props.addOrder(order)
   }
@@ -20,17 +21,15 @@ class AllInfo extends Component {
     this.props.prevStep();
   }
   render() {
-    const { firstName, phone, jobTitle, jobCompany, color, comment, topic} = this.props;
+    const { firstName, phone, color, comment, oil} = this.props;
     return (
       <>
         <h3>результат</h3>
     Цвет <div style={{background: color, width: '30px', height: '30px', borderRadius: '50%'}}></div><br/>
-    job <b>{jobTitle}</b><br/>
-    Company <b>{jobCompany}</b><br/>
     Имя <b>{firstName}</b><br/>
     Телефон <b>{phone}</b><br/>
     Комментарии <b>{comment}</b><br/>
-    Масло <b>{topic}</b><br/>
+    Масло <b>{oil}</b><br/>
     <button className="Back" onClick={this.back}>
       Back
     </button>

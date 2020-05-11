@@ -4,14 +4,11 @@ import "../Components/form/form.css";
 
 class Order extends Component {
   render() {
-    const order = {
-    
-    }
     return (
-      <div style={order}>
-        {/* <h1 style={{color:'#2f3444', fontSize: '50px', fontFamily: 'Caveat, cursive', textAlign: 'center', marginTop: '60px', paddingTop: '50px'}}>Мыло на заказ</h1> */}
-        <div style={{maxWidth:'600px', margin:'0 auto'}}>
-          {/* <p style={{textAlign:'center', fontSize: '26px', fontFamily:'Caveat'}}>В данном разделе вы можете самостоятельно выбрать ингредиенты, из которых наши специалисты изготовят мыло ручной работы на заказ.</p> */}
+      <div>
+        <div style={{maxWidth:'800px', margin: '0 auto', textAlign: 'center'}}>
+        <h1>Мыло на заказ</h1>
+          <p>В данном разделе вы можете самостоятельно выбрать ингредиенты, из которых наши специалисты изготовят мыло ручной работы на заказ.</p>
         </div>
           <div className='wrapper'><Main/></div>
       </div>

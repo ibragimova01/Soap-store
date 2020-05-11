@@ -5,8 +5,7 @@ const initState = {
     color: '',
     
     // step 2
-    jobTitle: '',
-    jobCompany: '',
+    oil: '',
 
     //final step
     firstName: '',
@@ -18,14 +17,13 @@ const initState = {
 const add = (order, state) => {
   state = {
     ...state, 
-    color: order.color,
-     jobTitle: order.jobTitle,
-     jobCompany: order.jobCompany,
+      color: order.color,
+      oil: order.oil,
 
-     firstName: order.firstName,
-     comment:  order.comment,
-     phone:  order.phone,
-     image: order.image
+      firstName: order.firstName,
+      comment:  order.comment,
+      phone:  order.phone,
+      image: order.image
   }
   console.log(state)
   return state

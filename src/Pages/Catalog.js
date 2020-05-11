@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProductList from "../Components/products/list";
 import {connect} from "react-redux";
+import Search from "../Components/search/search"
 
 class Catalog extends Component {
   render() {
@@ -8,7 +9,7 @@ class Catalog extends Component {
     return (
       <div className="container">
         <div className="row">
-      Кaталог
+      <Search/>
       </div>
         <ProductList products={products}/>
       </div>

@@ -5,12 +5,18 @@ class Select extends Component {
     super(props)
 
     this.state = {
-      topic: 'olive'
+      oil: 'olive',
+      extract: 'rose'
     }
   }
-  handleTopicChange = event => {
+  handleOilChange = event => {
     this.setState({
-      topic: event.target.value
+      oil: event.target.value,
+    })
+  }
+  handleExtractChange = event => {
+    this.setState({
+      extract: event.target.value
     })
   }
   continue = e => {
@@ -23,12 +29,19 @@ class Select extends Component {
   }
   render() {
     return (
+      <>
       <form>
-        <span>Выберите масло: </span>
-        <select value={this.state.topic} onChange={this.handleTopicChange}>
+        <p>Выберите растительное масло: </p>
+        <select value={this.state.oil} onChange={this.handleOilChange}>
           <option value="coconut">Кокосовое</option>
           <option value="olive">Оливковое</option>
           <option value="castor">Касторовое</option>
+        </select>
+        <p>Выберите экстракт: </p>
+        <select value={this.state.extract} onChange={this.handleExtractChange}>
+          <option value="rose">Роза</option>
+          <option value="vanila">Ваниль</option>
+          <option value="chamomile">Ромашка</option>
         </select>
         <button className="Back" onClick={this.back}>
           Back 
@@ -37,6 +50,7 @@ class Select extends Component {
           Next 
         </button>
       </form>
+      </>
     )
   }
 }

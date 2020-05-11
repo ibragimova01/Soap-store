@@ -14,7 +14,7 @@ class Main extends Component {
     color: '',
     image: null,
     // step 2
-    topic: '',
+    oil: '',
 
 
     //final step
@@ -53,15 +53,16 @@ setImage = (image) => {
   console.log(this.state.image);
 }
 
-setTopic = (topic) => {
+setOil = (oil) => {
   this.setState({
-    topic: topic
+    oil: oil
   })
-  console.log(this.state.topic);
+  console.log(this.state.oil);
 }
 
+
   showStep = () => {
-    const {step, firstName, phone, comment, topic, color, image} = this.state;
+    const {step, firstName, phone, comment, oil, color, image} = this.state;
     if(step === 1)
     return (
       <FirstStep
@@ -81,10 +82,10 @@ setTopic = (topic) => {
     if(step === 3)
     return (
       <Select
-      handleChange = {this.setTopic}
+      handleChange = {this.handleOilChange}
       nextStep = {this.nextStep}
       prevStep = {this.prevStep}
-      
+
     />
       );
       if(step === 4)
