@@ -25,7 +25,7 @@ class Search extends Component {
       <form onSubmit={this.handleSubmit}>
       <h6>Поиск</h6>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.SearchFilter}
               type='text'
               className='search'
             />
