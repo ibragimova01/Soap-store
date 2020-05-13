@@ -13,30 +13,23 @@ class Search extends Component {
   }
 
   handleChange(event) {
-    this.setState({
-      value: event.target.value
-    })
+    
+      console.log(event.target.value)
   }
 
   handleSubmit(event) {
-    event.preventDefault()
-    
   }
 
   render() {
     return (
-      <div>
-        <h6>Поиск</h6>
-        <div >
-          <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
+      <h6>Поиск</h6>
             <input
               onChange={this.handleChange}
               type='text'
-              className='form-control'
+              className='search'
             />
           </form>
-        </div>
-      </div>
     )
   }
 }

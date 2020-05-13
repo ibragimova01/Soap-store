@@ -1,29 +1,14 @@
 const initState = {
-  
 
-    // step 1
-    color: '',
-    
-    // step 2
-    oil: '',
+    orders: [
 
-    //final step
-    firstName: '',
-    phone: '',
-    comment: '',
-    image: null
+    ]
 }
 
 const add = (order, state) => {
   state = {
     ...state, 
-      color: order.color,
-      oil: order.oil,
-
-      firstName: order.firstName,
-      comment:  order.comment,
-      phone:  order.phone,
-      image: order.image
+    orders: [...state.orders, order]
   }
   console.log(state)
   return state

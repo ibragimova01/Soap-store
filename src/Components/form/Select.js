@@ -14,6 +14,7 @@ class Select extends Component {
       oil: event.target.value,
     })
   }
+  
   handleExtractChange = event => {
     this.setState({
       extract: event.target.value
@@ -28,17 +29,18 @@ class Select extends Component {
     this.props.prevStep();
   }
   render() {
+    const {handleChange, oil, extract} = this.props
     return (
       <>
       <form>
         <p>Выберите растительное масло: </p>
-        <select value={this.state.oil} onChange={this.handleOilChange}>
+        <select name="oil" value={oil} onChange={handleChange("oil")}>
           <option value="coconut">Кокосовое</option>
           <option value="olive">Оливковое</option>
           <option value="castor">Касторовое</option>
         </select>
         <p>Выберите экстракт: </p>
-        <select value={this.state.extract} onChange={this.handleExtractChange}>
+        <select name="extract" value={extract} onChange={handleChange("extract")}>
           <option value="rose">Роза</option>
           <option value="vanila">Ваниль</option>
           <option value="chamomile">Ромашка</option>
