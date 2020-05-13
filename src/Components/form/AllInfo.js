@@ -6,6 +6,7 @@ class AllInfo extends Component {
 
   addOrder() {
     const order={
+      id: Math.random(),
       color: this.props.color,
       firstName: this.props.firstName,
       phone: this.props.phone,
@@ -31,7 +32,7 @@ class AllInfo extends Component {
     Телефон <b>{phone}</b><br/>
     Комментарии <b>{comment}</b><br/>
     Масло <b>{oil}</b><br/>
-    
+
     <button className="Back" onClick={this.back}>
       Back
     </button>

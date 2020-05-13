@@ -1,6 +1,6 @@
 const initState = {
 
-    orders: [
+    items: [
 
     ]
 }
@@ -8,7 +8,7 @@ const initState = {
 const add = (order, state) => {
   state = {
     ...state, 
-    orders: [...state.orders, order]
+    items: [...state.items, order]
   }
   console.log(state)
   return state

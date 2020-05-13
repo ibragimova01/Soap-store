@@ -7,6 +7,7 @@ import Details from "./Pages/Details";
 import Order from './Pages/Order';
 import Catalog from './Pages/Catalog';
 import Cart from './Pages/Cart';
+import Orders from './Pages/Orders';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path='/cart' component={Cart}/>
           <Route path='/order' component={Order}/>
           <Route path='/details/:details_id' component={Details}/>
+          <Route path='/order-list' component={Orders}/>
           <Redirect to ='/'/>
         </Switch>
         </div>
