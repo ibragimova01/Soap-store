@@ -45,7 +45,7 @@ class CartProductRow extends Component {
                   </div>
     
                   <div className="col-lg-3 col-md-2 col-1 order-5 d-flex align-items-center">
-                      <p className="m-0 text-left font-weight-bold"><span className="d-inline-block d-md-none">Итого:&nbsp;</span>{ product.quantity * product.price } сом</p>
+                      <p className="d-none m-0 text-left font-weight-bold"><span className="d-inline-block d-md-none">Итого:&nbsp;</span>{ product.quantity * product.price } сом</p>
                   </div>
                   <div className="col-1 align-self-md-center align-self-start order-1 order-md-last">
                       <span className="pointer cart-btn rounded-circle d-flex justify-content-center align-items-center p-2 delete_book" onClick={ () => {this.deleteCartProduct(product)}}>&times;</span>

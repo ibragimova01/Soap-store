@@ -13,7 +13,8 @@ class AllInfo extends Component {
       comment: this.props.comment,
       image: this.props.image,
       oil: this.props.oil,
-      extract: this.props.extract
+      extract: this.props.extract,
+      type: 'individual'
     }
     this.props.addOrder(order)
   }
@@ -23,7 +24,7 @@ class AllInfo extends Component {
     this.props.prevStep();
   }
   render() {
-    const { firstName, phone, color, comment, oil, extract} = this.props;
+    const { firstName, phone, color, comment, oil, extract, image} = this.props;
     return (
       <>
         <h3>результат</h3>
@@ -32,7 +33,7 @@ class AllInfo extends Component {
     Телефон <b>{phone}</b><br/>
     Комментарии <b>{comment}</b><br/>
     Масло <b>{oil}</b><br/>
-
+    Экстракт<b>{extract}</b><br/>
     <button className="Back" onClick={this.back}>
       Back
     </button>

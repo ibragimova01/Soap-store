@@ -4,9 +4,34 @@ import {connect} from "react-redux";
 import CartProductRow from "./product-row";
 import { Link } from "react-router-dom";
 import "./cart.css";
+import PersonalInfo from "../form/PersonalInfo"
+import {addOrder} from "../../store/actions/orderActions";
 
 class CartIndex extends Component {
+  state = {
+    firstName: '',
+    phone: '', 
+    comment: ''
+  }
+  addOrder() {
+    const {shoppingCart} = this.props
+    const order={
+      id: Math.random(),
+      firstName: this.state.firstName,
+      phone: this.state.phone,
+      comment: this.state.comment,
+      cart: shoppingCart,
+      type: 'cart'
+    }
+    console.log(order)
+    this.props.addOrder(order)
+  }
+  handleChange = input => e => {
+    this.setState({[input]: e.target.value});
+    console.log(e.target.value, input)
+  }
   render() {
+    const { firstName, phone, comment} = this.state
     const {shoppingCart} = this.props
 
     console.log(shoppingCart)
@@ -37,6 +62,16 @@ return (
   <div key={product.id}><CartProductRow product={product} /></div>
 )
           })}
+          <div className="row ">
+            <div className="col-12">
+              <PersonalInfo
+              handleChange = {this.handleChange}
+              firstName = {firstName}
+              phone = {phone}
+              comment ={comment}
+              />
+            </div>
+          </div>
           <div className="row justify-content-end mt-5 py-5">
               <div className="col-12 col-sm-8 col-md-5 col-lg-4 d-flex p-3" style={background}>
                   <div className="col-6 m-0 h6 font-weight-bold">
@@ -48,11 +83,11 @@ return (
               </div>
               <div className="w-100"></div>
               <div className="col-12 col-sm-8 col-md-5 col-lg-4 p-0 mt-1">
-                  <Link to="#" className="btn btn-danger border-0 w-100 text-light">
+                  <button onClick={() => {this.addOrder()}} className="btn btn-danger border-0 w-100 text-light">
                       <div className="bg-danger rounded text-center font-weight-bold h6 m-0 p-4">
                           Оформить заказ
                       </div>
-                  </Link>
+                  </button>
               </div>
               
           </div>
@@ -75,7 +110,8 @@ return (
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addProduct: (product) => dispatch(addProduct(product)) 
+    addProduct: (product) => dispatch(addProduct(product)),
+    addOrder: (order) => dispatch(addOrder(order))
   }
 }
 

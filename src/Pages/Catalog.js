@@ -5,7 +5,8 @@ import Search from "../Components/search/search"
 
 class Catalog extends Component {
   state = {
-    products: null
+    products: null,
+    search: ""
   }
   componentDidMount() {
     setTimeout( () => {
@@ -20,14 +21,16 @@ class Catalog extends Component {
       return product.title.toLowerCase().includes(e.target.value.toLowerCase())
     }) 
     this.setState({
-      products: products
+      products: products,
+      search: e.target.value.toLowerCase()
+
     })
   }
   render() {
     return (
       <div className="container">
         <div className="row">
-      <Search SearchFilter={this.SearchFilter}/>
+      <Search SearchFilter={this.SearchFilter} search={this.state.search}/>
       </div>
         <ProductList products={this.state.products}/>
       </div>

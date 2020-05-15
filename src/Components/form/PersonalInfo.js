@@ -11,6 +11,7 @@ class PersonalInfo extends Component {
   }
   render() {
     const {handleChange, firstName, phone, comment} = this.props;
+    
     return (
       <>
         <h3>Введите данные</h3>
@@ -40,12 +41,14 @@ class PersonalInfo extends Component {
             onChange={handleChange('comment')}
           ></textarea>
         </label>
-        <button className="Back" onClick={this.back}>
+        {this.props.nextStep && <div>
+          <button className="Back" onClick={this.back}>
           Back 
         </button>
         <button className="Next" onClick={this.continue}>
           Next 
         </button>
+          </div>}
       </>
     )
   }
