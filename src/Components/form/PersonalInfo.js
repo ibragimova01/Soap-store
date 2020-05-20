@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class PersonalInfo extends Component {
-  continue = e => {
-    e.preventDefault()
+  continue = (e) => {
     this.props.nextStep();
-  }
-  back = e => {
-    e.preventDefault()
+  };
+  back = (e) => {
     this.props.prevStep();
-  }
+  };
   render() {
-    const {handleChange, firstName, phone, comment} = this.props;
-    
+    const { handleChange, firstName, phone, comment } = this.props;
+
     return (
       <>
         <h3>Введите данные</h3>
@@ -21,7 +19,7 @@ class PersonalInfo extends Component {
             name="firstName"
             placeholder="Имя"
             value={firstName}
-            onChange={handleChange('firstName')}
+            onChange={handleChange("firstName")}
           />
         </label>
         <label>
@@ -30,7 +28,7 @@ class PersonalInfo extends Component {
             name="phone"
             placeholder="Контактный телефон"
             value={phone}
-            onChange={handleChange('phone')}
+            onChange={handleChange("phone")}
           />
         </label>
         <label>
@@ -38,21 +36,23 @@ class PersonalInfo extends Component {
             name="comment"
             placeholder="Коментарии"
             value={comment}
-            onChange={handleChange('comment')}
+            onChange={handleChange("comment")}
           ></textarea>
         </label>
-        {this.props.nextStep && <div>
-          <button className="Back" onClick={this.back}>
-          Back 
-        </button>
-        <button className="Next" onClick={this.continue}>
-          Next 
-        </button>
-          </div>}
+        {this.props.nextStep && (
+          <div>
+            <button className="Back" onClick={this.back}>
+              Back
+            </button>
+            <button className="Next" onClick={this.continue}>
+              Next
+            </button>
+          </div>
+        )}
       </>
-    )
+    );
   }
 }
 
-export default PersonalInfo
+export default PersonalInfo;
 

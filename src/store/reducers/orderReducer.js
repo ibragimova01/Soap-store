@@ -1,29 +1,24 @@
 const initState = {
-
-    items: [
-
-    ]
-}
+  items: [],
+};
 
 const add = (order, state) => {
   state = {
-    ...state, 
-    items: [...state.items, order]
-  }
-  console.log(state)
-  return state
-}
+    ...state,
+    items: [...state.items, order],
+  };
+  return state;
+};
 
 const orderReducer = (state = initState, action) => {
-
-  switch(action.type) {
-    case 'ADD_ORDER' :
-      state = add(action.order, state) 
-      break
+  switch (action.type) {
+    case "ADD_ORDER":
+      state = add(action.order, state);
+      break;
     default:
-      break
+      break;
   }
-  return state
-}
+  return state;
+};
 
-export default orderReducer
+export default orderReducer;

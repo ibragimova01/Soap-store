@@ -1,41 +1,38 @@
-import React, { Component } from 'react';
-import { SwatchesPicker } from 'react-color';
+import React, { Component } from "react";
+import { SwatchesPicker } from "react-color";
 
-class ColorPicker extends Component  {
+class ColorPicker extends Component {
   state = {
-    color: '#e91e63',
+    color: "#e91e63",
     background: {
-      background: '#e91e63'
-    }
-  }
-  componentDidMount(){
-    setTimeout(() =>  {
-      this.props.handleChange(this.state.color)
-    }, 100 )
-    console.log(this.state, this.props)
+      background: "#e91e63",
+    },
+  };
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.handleChange(this.state.color);
+    }, 100);
   }
   handleChangeComplete = (color, event) => {
     this.setState({
       color: color.hex,
       background: {
-        background: color.hex
-      }
+        background: color.hex,
+      },
     });
-    console.log(this.state, this.props)
     this.props.handleChange(color.hex);
   };
-  
-  render () {
+
+  render() {
     return (
       <div style={this.state.background}>
         <SwatchesPicker
-        color={this.state.color} 
-        onChangeComplete={this.handleChangeComplete}
+          color={this.state.color}
+          onChangeComplete={this.handleChangeComplete}
         />
       </div>
-      
-    )
-    }
+    );
   }
+}
 
-export default ColorPicker
+export default ColorPicker;

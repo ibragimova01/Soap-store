@@ -1,12 +1,12 @@
 .details-inner {
   display: flex;
   justify-content: center;
-  align-items:center;
-  min-height:80vh;
+  align-items: center;
+  min-height: 80vh;
 }
 .details-container {
   position: relative;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 900px;
@@ -15,7 +15,7 @@
   margin: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.486);
 }
-.img-box{
+.img-box {
   position: relative;
   display: flex;
   justify-content: center;
@@ -25,12 +25,12 @@
   background-color: white;
   overflow: hidden;
 }
-.details-img{
+.details-img {
   position: relative;
   width: 100%;
   height: auto;
 }
-.details{
+.details {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,8 +39,8 @@
   box-sizing: border-box;
   padding: 40px;
 }
-.title{
-  font-family: 'Caveat', cursive;
+.title {
+  font-family: "Caveat", cursive;
   font-size: 2.5rem;
   line-height: 0.8em;
   color: #444;
@@ -52,36 +52,36 @@
 .composition {
   font-size: 14px;
 }
-@media (max-width: 1080px){
-  .content .content h3{
+@media (max-width: 1080px) {
+  .content .content h3 {
     display: flex;
     float: none;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
   }
-  .details-container{
+  .details-container {
     height: auto;
   }
-  .img-box{
+  .img-box {
     box-sizing: border-box;
     width: 100%;
     height: 280px;
     overflow: hidden;
     text-align: center;
-    align-items:center;
+    align-items: center;
   }
-  .details-img{
+  .details-img {
     left: initial;
     max-width: 100%;
     height: auto;
   }
-  .details{
+  .details {
     width: 100%;
     height: auto;
     padding: 20px;
   }
-  .details .content p{
+  .details .content p {
     max-width: 100%;
     height: auto;
     margin: 2%;
