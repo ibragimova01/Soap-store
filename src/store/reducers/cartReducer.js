@@ -1,99 +1,96 @@
 const initState = {
-  items:[],
-  total:0,
-  totalSum:0
-}
+  items: [],
+  total: 0,
+  totalSum: 0,
+};
 
 const add = (product, state) => {
-let findedProduct = state.items.find(e => e.id === product.id)
+  let foundProduct = state.items.find((e) => e.id === product.id);
 
-  if (findedProduct) {
+  if (foundProduct) {
     state = {
       ...state,
       total: state.total + 1,
-      totalSum: state.totalSum + findedProduct.price,
+      totalSum: state.totalSum + foundProduct.price,
       items: state.items.map((item) => {
-        item = {...item};
+        item = { ...item };
         if (item.id === product.id) {
-          item.quantity+=1
+          item.quantity += 1;
         }
-        return item
-      })
-    }
+        return item;
+      }),
+    };
   } else {
     product.quantity = 1;
     state = {
       ...state,
       total: state.total + 1,
       totalSum: state.totalSum + product.price,
-      items: [...state.items, product]
-    }
-    
+      items: [...state.items, product],
+    };
   }
-  return state
-}
+  return state;
+};
 
 const remove = (id, state) => {
-let findedProduct = state.items.find(e => e.id === id)
+  let foundProduct = state.items.find((e) => e.id === id);
 
-if (findedProduct.quantity > 1) {
-  state = {
+  if (foundProduct.quantity > 1) {
+    state = {
       ...state,
       total: state.total - 1,
-      totalSum: state.totalSum - findedProduct.price,
+      totalSum: state.totalSum - foundProduct.price,
       items: state.items.map((item) => {
-        item = {...item};
+        item = { ...item };
         if (item.id === id) {
-          item.quantity-=1
+          item.quantity -= 1;
         }
-        return item
-      })
-    }
-} else {
-  state = {
+        return item;
+      }),
+    };
+  } else {
+    state = {
       ...state,
       total: state.total - 1,
-      totalSum: state.totalSum - findedProduct.price,
+      totalSum: state.totalSum - foundProduct.price,
       items: state.items.filter((item) => {
-        return item.id !== id
-      })
-    }
-}
-return state
-}
+        return item.id !== id;
+      }),
+    };
+  }
+  return state;
+};
 
 const deleteProduct = (product, state) => {
-  let findedProduct = state.items.find(e => e.id === product.id)
-  if  (findedProduct) {
-    
+  let foundProduct = state.items.find((e) => e.id === product.id);
+  if (foundProduct) {
     state = {
-      ...state, 
-      totalSum: state.totalSum - findedProduct.price * findedProduct.quantity, 
-      total: state.total - findedProduct.quantity,
-      items: state.items.filter(item => {
-        return item.id !== product.id
-      })
-  
-    }
+      ...state,
+      totalSum: state.totalSum - foundProduct.price * foundProduct.quantity,
+      total: state.total - foundProduct.quantity,
+      items: state.items.filter((item) => {
+        return item.id !== product.id;
+      }),
+    };
   }
-  return state
-}
+  return state;
+};
 
 const cartReducer = (state = initState, action) => {
-switch(action.type) {
-  case "ADD_PRODUCT":
-    state = add(action.product, state)
-    break 
-  case "REMOVE_PRODUCT":
-    state = remove(action.id, state)
-    break
-  case "DELETE_PRODUCT":
-    state = deleteProduct(action.product, state)
-    break
-  default:
-    break
-}
-console.log(state)
-return state 
-}
-export default cartReducer
+  switch (action.type) {
+    case "ADD_PRODUCT":
+      state = add(action.product, state);
+      break;
+    case "REMOVE_PRODUCT":
+      state = remove(action.id, state);
+      break;
+    case "DELETE_PRODUCT":
+      state = deleteProduct(action.product, state);
+      break;
+    default:
+      break;
+  }
+  return state;
+};
+
+export default cartReducer;
