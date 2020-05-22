@@ -12,8 +12,7 @@ class Header extends Component {
         className="navbar"
         collapseOnSelect
         expand="md"
-        bg="light"
-        variant="light"
+        fixed="top"
       >
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -28,6 +27,9 @@ class Header extends Component {
           </NavLink>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="m-auto ">
+              <NavLink className="mx-2 nav-title" to ="/">
+                <i className="fa fa-home m-icons"/>
+              </NavLink>
               <NavLink className="mx-2 nav-title" to="/order-list">
                 Список заказов
               </NavLink>

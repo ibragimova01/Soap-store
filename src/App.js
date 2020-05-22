@@ -6,6 +6,7 @@ import Order from "./Pages/Order";
 import Catalog from "./Pages/Catalog";
 import Cart from "./Pages/Cart";
 import Orders from "./Pages/Orders";
+import Home from "./Pages/Home";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/order" component={Order} />
             <Route path="/details/:details_id" component={Details} />
             <Route path="/order-list" component={Orders} />
+            <Route path="/" component={Home} />
             <Redirect to="/catalog" />
           </Switch>
         </div>
