@@ -7,6 +7,7 @@ import Catalog from "./Pages/Catalog";
 import Cart from "./Pages/Cart";
 import Orders from "./Pages/Orders";
 import Home from "./Pages/Home";
+import Social from "./Components/social/index"
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/" component={Home} />
             <Redirect to="/catalog" />
           </Switch>
+          <Social/>
         </div>
       </BrowserRouter>
     );
