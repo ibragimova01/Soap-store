@@ -6,9 +6,9 @@ import "./order.css";
 class Order extends Component {
   render() {
     return (
-      <div>
+      <div className="order__inner">
         <div className="order-container">
-          <h1>Мыло на заказ</h1>
+          <h1>Закажите своё уникальное мыло</h1>
           <p>
             В данном разделе вы можете самостоятельно выбрать ингредиенты, из
             которых наши специалисты изготовят мыло ручной работы на заказ.

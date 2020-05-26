@@ -20,12 +20,13 @@ class Search extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <h6>Поиск</h6>
+        <h6>Поиск по каталогу</h6>
         <input
           name="search"
           onChange={this.props.SearchFilter}
           type="text"
           className="search"
+          placeholder="Поиск"
         />
       </form>
     );

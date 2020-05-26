@@ -12,7 +12,6 @@ class Header extends Component {
         className="navbar"
         collapseOnSelect
         expand="md"
-        fixed="top"
       >
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -45,6 +44,9 @@ class Header extends Component {
                 <span className="badge cart-status badge-pill badge-danger">
                   {this.props.shoppingCart.total}
                 </span>
+              </NavLink>
+              <NavLink className="mx-2 nav-title" to="/login">
+                Login
               </NavLink>
             </Nav>
           </Navbar.Collapse>

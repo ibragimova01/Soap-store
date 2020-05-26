@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ProductList from "../Components/products/list"
 import { connect } from "react-redux";
 import Search from "../Components/search/search";
+import "./catalog.css";
 
 class Catalog extends Component {
   state = {
@@ -20,11 +21,13 @@ class Catalog extends Component {
   };
   render() {
     return (
+      <div className="catalog-wrap">
       <div className="container">
         <div className="row">
           <Search SearchFilter={this.SearchFilter} search={this.state.search} />
         </div>
         <ProductList products={this.state.products} />
+      </div>
       </div>
     );
   }
