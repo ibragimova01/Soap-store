@@ -46,7 +46,7 @@ class Header extends Component {
                 </span>
               </NavLink>
               <NavLink className="mx-2 nav-title" to="/login">
-                Login
+                Войти
               </NavLink>
             </Nav>
           </Navbar.Collapse>
