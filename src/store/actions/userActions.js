@@ -3,3 +3,8 @@ export const login = (user) => {
     dispatch({ type: "LOGIN", user });
   };
 };
+export const logout = (user) => {
+  return (dispatch) => {
+    dispatch({ type: "LOGOUT", user });
+  };
+};

@@ -56,3 +56,8 @@
 #goRight {
   right: 0;
 }
+@media (max-width: 1024px) {
+  .slider  {
+    display: none;
+  }
+}

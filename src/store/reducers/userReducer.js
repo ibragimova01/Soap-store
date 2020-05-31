@@ -9,8 +9,28 @@ const initState = {
   ],
 };
 
+const logout = (user, state) => {
+  const foundUser = state.users.find(u => u.email===user.email)
+  console.log(foundUser, user)
+  
+    state = {
+      ...state,
+      users: state.users.map((item) => {
+        item = { ...item };
+        if (item.id === foundUser.id) {
+          item.logged = false;
+        }
+        return item;
+      }),
+    };
+  console.log(state)
+  return state;
+}
+
+
 const login = (user, state) => {
-  const foundUser = state.user.find(u => u.email===user.email)
+  const foundUser = state.users.find(u => u.email===user.email)
+  console.log(foundUser, user)
   if(foundUser.pass===user.pass) {
     state = {
       ...state,
@@ -23,7 +43,7 @@ const login = (user, state) => {
       }),
     };
   }
-  
+  console.log(state)
   return state;
 };
 
@@ -31,6 +51,9 @@ const userReducer = (state = initState, action) => {
   switch (action.type) {
     case "LOGIN":
       state = login(action.user, state);
+      break;
+    case "LOGOUT":
+      state = logout(action.user, state);
       break;
     default:
       break;

@@ -9,13 +9,14 @@ import Orders from "./Pages/Orders";
 import Home from "./Pages/Home";
 import Social from "./Components/social/index";
 import Login from "./Pages/Login";
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <Header />
+          <Header users={this.props.users}/>
           <Switch>
             <Route path="/catalog" component={Catalog} />
             <Route path="/cart" component={Cart} />
@@ -27,11 +28,16 @@ class App extends Component {
             <Redirect to="/catalog" />
           </Switch>
           <Social/>
-
         </div>
       </BrowserRouter>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+  users: state.users.users,
+  };
+};
+
+export default connect(mapStateToProps)(App);

@@ -4,9 +4,25 @@ import logo from "../header/logo.png";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import "../header/header.css";
+import { logout } from "../../store/actions/userActions";
 
 class Header extends Component {
+  loggedUser = () => {
+
+    const {users} = this.props
+    const foundUser = users.find(u => u.logged===true)
+    console.log(foundUser, foundUser===undefined)
+    if(foundUser===undefined) {
+      return false
+    } else {
+      return foundUser ? foundUser : false
+    }
+  }
+  logout(user) {
+    this.props.logout(user)
+  }
   render() {
+    const user = this.loggedUser()
     return (
       <Navbar
         className="navbar"
@@ -29,9 +45,15 @@ class Header extends Component {
               <NavLink className="mx-2 nav-title" to ="/">
                 <i className="fa fa-home m-icons"/>
               </NavLink>
+              {
+                this.loggedUser()
+                ?
               <NavLink className="mx-2 nav-title" to="/order-list">
                 Список заказов
               </NavLink>
+                :
+              ""
+              }
               <NavLink className="mx-2 nav-title" to="/order">
                 Мыло на заказ
               </NavLink>
@@ -45,9 +67,20 @@ class Header extends Component {
                   {this.props.shoppingCart.total}
                 </span>
               </NavLink>
+              {
+                
+                this.loggedUser()
+                ?
+              <NavLink to="/" className="mx-2 nav-title" onClick={() => {this.logout(user)}}>
+                {user.email.charAt(0)}
+                &nbsp;
+                Выйти
+              </NavLink>
+                :
               <NavLink className="mx-2 nav-title" to="/login">
                 Войти
               </NavLink>
+              }
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -56,10 +89,13 @@ class Header extends Component {
   }
 }
 
+const mapDispatchToProps = { logout };
+
+
 const mapStateToProps = (state) => {
   return {
     shoppingCart: state.shoppingCart,
   };
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
