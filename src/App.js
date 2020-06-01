@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import Header from "./Components/header/Header";
 import Details from "./Pages/Details";
 import Order from "./Pages/Order";
@@ -9,13 +10,14 @@ import Orders from "./Pages/Orders";
 import Home from "./Pages/Home";
 import Social from "./Components/social/index";
 import Login from "./Pages/Login";
-import { connect } from "react-redux";
+import Footer from "./Components/footer/footer";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
+          <div className="content-wrap">
           <Header users={this.props.users}/>
           <Switch>
             <Route path="/catalog" component={Catalog} />
@@ -28,6 +30,8 @@ class App extends Component {
             <Redirect to="/catalog" />
           </Switch>
           <Social/>
+          </div>
+          <Footer/>
         </div>
       </BrowserRouter>
     );
