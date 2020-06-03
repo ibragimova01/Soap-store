@@ -33,6 +33,7 @@ class PersonalInfo extends Component {
         </label>
         <label>
           <textarea
+            className="text-area"
             name="comment"
             placeholder="Коментарии"
             value={comment}

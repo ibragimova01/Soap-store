@@ -46,6 +46,7 @@ class CartIndex extends Component {
         background: "rgba(0, 0, 0, 0.03)",
       };
       return (
+      <div className="cart-content">
         <div className="container">
           <div className="row d-none d-md-flex">
             <div className="col-4 h3">Товар</div>
@@ -62,8 +63,7 @@ class CartIndex extends Component {
                 </div>
               );
             })}
-          <div className="row ">
-            <div className="col-12">
+            <div className="cart-form">
               <PersonalInfo
                 handleChange={this.handleChange}
                 firstName={firstName}
@@ -71,8 +71,7 @@ class CartIndex extends Component {
                 comment={comment}
               />
             </div>
-          </div>
-          <div className="row justify-content-end mt-5 py-5">
+          <div className="row justify-content-center py-2">
             <div
               className="col-12 col-sm-8 col-md-5 col-lg-4 d-flex p-3"
               style={background}
@@ -97,6 +96,7 @@ class CartIndex extends Component {
             </div>
           </div>
         </div>
+      </div>
       );
     }
   }

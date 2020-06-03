@@ -45,7 +45,7 @@ class CartProductRow extends Component {
             style={width}
           >
             <span
-              className="pointer cart-btn rounded-circle p-2 remove_book d-flex justify-content-center align-items-center"
+              className="pointer cart-btn rounded-circle p-2 d-flex justify-content-center align-items-center"
               onClick={() => {
                 this.remove(product.id);
               }}
@@ -54,7 +54,7 @@ class CartProductRow extends Component {
             </span>
             <span className="mx-2">{product.quantity}</span>
             <span
-              className="pointer cart-btn rounded-circle buy_book p-2 d-flex justify-content-center align-items-center"
+              className="pointer cart-btn rounded-circle p-2 d-flex justify-content-center align-items-center"
               onClick={() => {
                 this.shop(product);
               }}
@@ -64,7 +64,7 @@ class CartProductRow extends Component {
           </div>
         </div>
         <div className="col-lg-3 col-md-2 col-1 order-5 d-flex align-items-center">
-          <p className="d-none m-0 text-left font-weight-bold">
+          <p className="m-0 text-left font-weight-bold">
             <span className="d-inline-block d-md-none">Итого:&nbsp;</span>
             {product.quantity * product.price} сом
           </p>
