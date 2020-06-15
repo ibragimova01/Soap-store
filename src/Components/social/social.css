@@ -50,7 +50,7 @@
   font-size: 12px;
 }
 .social li:hover {
-  z-index: 1;
+  z-index: 20;
   width: 180px;
 }
 .social ul li:hover span{

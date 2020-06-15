@@ -14,20 +14,20 @@ import img13 from "./i13.jpg";
 const InstagramPage = () => {
   return (
     <div className="insta-page container">
-      <h6>Мы в Intagram</h6>
+      <h5>Мы в Intagram</h5>
         <div className="insta__inner">
-          <img alt="soap" src={img1}/>
-          <img alt="soap" src={img13}/>
-          <img alt="soap" src={img3}/>
-          <img alt="soap" src={img11}/>
-          <img alt="soap" src={img5}/>
-          <img alt="soap" src={img6}/>
-          <img alt="soap" src={img9}/>
-          <img alt="soap" src={img8}/>
-          <img alt="soap" src={img4}/>
-          <img alt="soap" src={img10}/>
+          <a href="https://www.instagram.com/p/CBTq_CbDVsk/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img1}/></a>
+          <a href="https://www.instagram.com/p/CBTrjfNDUMX/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img13}/></a>
+          <a href="https://www.instagram.com/p/CBTrBvAjE4M/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img3}/></a>
+          <a href="https://www.instagram.com/p/CBTriniDP98/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img11}/></a>
+          <a href="https://www.instagram.com/p/CBTrDpsD7JD/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img5}/></a>
+          <a href="https://www.instagram.com/p/CBTrFJQjzmo/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img6}/></a>
+          <a href="https://www.instagram.com/p/CBTrGSWDRwy/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img9}/></a>
+          <a href="https://www.instagram.com/p/CBTrKZ_jkm5/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img8}/></a>
+          <a href="https://www.instagram.com/p/CBTrJErj6eO/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img4}/></a>
+          <a href="https://www.instagram.com/p/CBTrHj7jtal/?utm_source=ig_web_copy_link" target="blank"><img alt="soap" src={img10}/></a>
         </div>
-          <i className="fa fa-instagram insta-icon"></i>
+          <a href="https://www.instagram.com/1311584949fjdj/?hl=ru" target="blank"><i className="fa fa-instagram insta-icon"></i></a>
       </div>
   )
 }

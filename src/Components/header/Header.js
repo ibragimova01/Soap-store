@@ -28,7 +28,6 @@ class Header extends Component {
         className="navbar"
         collapseOnSelect
         expand="md"
-        fixed="top"
       >
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
