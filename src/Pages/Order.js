@@ -8,7 +8,6 @@ class Order extends Component {
   render() {
     return (
       <div className="order__inner">
-        <Slider/>
         <div className="order-container">
           <h1>Закажите своё уникальное мыло</h1>
           <p>
@@ -16,6 +15,7 @@ class Order extends Component {
             которых наши специалисты изготовят мыло ручной работы на заказ.
           </p>
         </div>
+        <Slider/>
         <div className="wrapper">
           <Main />
         </div>

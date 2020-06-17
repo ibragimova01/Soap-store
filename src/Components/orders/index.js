@@ -1,12 +1,13 @@
 import React from "react";
 import OrderRow from "./order-row";
+import "./orders.css";
 
 const OrderIndex = ({ orders }) => {
   if (!orders.items.length) {
-    return <div>Заказов нет!</div>;
+    return <div className="orders-content">Заказов нет!</div>;
   }
     return (
-      <div className="row">
+      <div className="orders-content row">
         {orders.items &&
           orders.items.map((order) => {
             return (

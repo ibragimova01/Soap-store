@@ -34,7 +34,7 @@ class CartIndex extends Component {
 
     if (!shoppingCart.items.length) { 
       return (
-        <div className="container">
+        <div className="cart__inner container">
           <h1 className="text-uppercase h3 py-4">Корзина</h1>
           <div className="row justify-content-center">
             <p className="h3 text-muted">Корзина пуста!</p>

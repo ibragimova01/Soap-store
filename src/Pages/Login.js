@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 import { login } from "../store/actions/userActions";
 import { connect } from "react-redux";
-
+import "./login.css";
 class Login extends Component {
   state = {
     email: '',
@@ -21,14 +21,12 @@ class Login extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="login-content container">
         <Form onSubmit={this.handleSubmit}>
   <Form.Group controlId="email">
-    <Form.Label>Email</Form.Label>
     <Form.Control type="email" placeholder="Email" onChange={this.handleChange} />
   </Form.Group>
   <Form.Group controlId="pass">
-    <Form.Label>Пароль</Form.Label>
     <Form.Control type="password" placeholder="Пароль" onChange={this.handleChange}/>
   </Form.Group>
   <Form.Group controlId="formBasicCheckbox">

@@ -1,10 +1,12 @@
+.cards{
+  margin-top: 90px;
+}
 .cards__inner{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 270px;
   background-color:  rgb(176, 210, 218);
-
 }
 .cards-container{
   position: relative;
@@ -61,4 +63,10 @@
   text-align: center;
   margin-bottom: 180px;
   font-size: 20px;
+}
+@media screen and (max-width: 767px) {
+  .cards {
+    display: none;
+    margin-top: 0;
+  }
 }

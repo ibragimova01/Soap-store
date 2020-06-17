@@ -20,5 +20,10 @@
 }
 .navbar {
   background-color: #fcfcfcef;
-  
+}
+
+@media screen and (max-width: 767px) {
+  .mx-2 span{
+    display: none;
+  }
 }

@@ -7,13 +7,8 @@ function Home() {
   return (
     <div className="home">
       <div className="home__inner">
-
-      </div>
-      <div className="title-wrap">
         <h2 className="home-title">LaVanda</h2>
-      </div>
-      <div className="subtitle-wrap">
-        <h2 className="home-subtitle"> </h2>
+        <h6 className="home-subtitle">- натуральность и забота в каждом брусочке мыла.</h6>
       </div>
       <Cards/>
       <InstagramPage/>

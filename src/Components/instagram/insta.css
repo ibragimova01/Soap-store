@@ -67,7 +67,7 @@
     max-width: 106px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (width: 1024px) {
   .insta__inner img:last-child{
     display:none
   }

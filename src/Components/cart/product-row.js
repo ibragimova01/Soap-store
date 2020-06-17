@@ -5,6 +5,7 @@ import {
   removeProduct,
   deleteProduct,
 } from "../../store/actions/cartActions";
+import "./cart.css";
 
 class CartProductRow extends Component {
   shop(product) {
