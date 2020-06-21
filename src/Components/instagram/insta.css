@@ -35,6 +35,9 @@
   .insta__inner img{
     margin: 4px 4px;
   }
+  .insta__inner a:last-child{
+    display:none
+  }
 }
 @media screen and (max-width: 360px) {
   .insta__inner img{
@@ -65,10 +68,5 @@
   .insta__inner img{
     max-height: 106px;
     max-width: 106px;
-  }
-}
-@media screen and (width: 1024px) {
-  .insta__inner img:last-child{
-    display:none
   }
 }

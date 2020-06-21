@@ -28,7 +28,6 @@ class Header extends Component {
         className="navbar"
         collapseOnSelect
         expand="md"
-        fixed="top"
       >
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -49,8 +48,8 @@ class Header extends Component {
               {
                 this.loggedUser()
                 ?
-              <NavLink className="mx-2 nav-title" to="/order-list">
-                Список заказов
+              <NavLink className="mx-2 nav-title" to="/admin">
+                Админ панель
               </NavLink>
                 :
               ""

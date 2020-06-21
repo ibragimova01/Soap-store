@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./search.css";
 
 class Search extends Component {
   state = {
@@ -19,8 +20,8 @@ class Search extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h6>Поиск по каталогу</h6>
+      <form className="search-form"  onSubmit={this.handleSubmit}>
+        <i className="fa fa-search" aria-hidden="true"></i>
         <input
           name="search"
           onChange={this.props.SearchFilter}

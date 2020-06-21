@@ -24,9 +24,9 @@ const Footer = () => {
           <div className="col">
             <h5>Контакты</h5>
             <ul className="list-unstyled">
-              <li>+996772778933</li>
-              <li>+996502778333</li>
-              <li>+996552778933</li>
+              <li>+996 772 77 89 33</li>
+              <li>+996 502 77 83 33</li>
+              <li>+996 552 77 89 33</li>
             </ul>
           </div>
           <div className="col">

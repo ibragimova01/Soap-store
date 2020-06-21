@@ -1,5 +1,6 @@
 .home__inner{
   background: url(./mainbg.jpg) center;
+  background-image: linear-gradient(to bottom,  #fff);
   background-size: cover;
   height: 100vh;
   

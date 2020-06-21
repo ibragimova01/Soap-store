@@ -8,7 +8,6 @@ function Home() {
     <div className="home">
       <div className="home__inner">
         <h2 className="home-title">LaVanda</h2>
-        <h6 className="home-subtitle">- натуральность и забота в каждом брусочке мыла.</h6>
       </div>
       <Cards/>
       <InstagramPage/>

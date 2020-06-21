@@ -1,0 +1,11 @@
+
+.search-form{
+  margin: 0 auto;
+  padding-bottom: 20px;
+  text-align: center;
+  display: flex;
+}
+.fa-search{
+  margin-top: 7px;
+  padding-right: 10px
+}
