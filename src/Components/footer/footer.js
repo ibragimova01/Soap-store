@@ -33,7 +33,7 @@ const Footer = () => {
             <h5>Наш адрес</h5>
             <ul className="list-unstyled">
               <li>Бишкек, Кыргызстан</li>
-              <li>ул. Токтогула 27</li>
+              <li>ул. Токтогула 27 <a className="social-icon" href="https://www.youtube.com/?hl=ru" target="blank"><i className="fa fa-youtube s-icon"></i><span>youtube</span></a></li>
             </ul>
           </div>
         </div>

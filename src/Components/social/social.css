@@ -5,6 +5,7 @@
   transform: translateY(-50%);
   width: 62px;
   box-shadow: 2px 2px 8px 0 rgba(0,0,0,.4);
+  z-index: 999;
 }
 .social ul{
   margin: 0;

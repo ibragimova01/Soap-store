@@ -6,13 +6,18 @@ import DataTable from 'react-data-table-component';
 function IndividualOrders() {
   const columns = [
     {
-      name: 'Title',
-      selector: 'title',
+      name: 'First Name',
+      selector: 'firstName',
       sortable: true,
     },
     {
-      name: 'Year',
-      selector: 'year',
+      name: 'Phone',
+      selector: 'phone',
+      sortable: true,
+    },
+    {
+      name: 'Comment',
+      selector: 'comment',
       sortable: true,
     },
   ];
@@ -28,19 +33,11 @@ function IndividualOrders() {
       
         <div className="col">
           <h1>Individual</h1>
-          {cartOrders &&
-          cartOrders.map((order) => {
-            return (
-              <div key={order.id} className="col-12">
-                <OrderRow order={order} />
-              </div>
-            );
-          })}
           <DataTable
-        title="Arnold Movies"
-        columns={columns}
-        data={data}
-      />
+            title="Individual orders"
+            columns={columns}
+            data={cartOrders}
+          />
         </div>
       </div>
     )
